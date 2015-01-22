@@ -1,0 +1,37 @@
+CC=@CXX@
+CXX=@CXX@
+CXXFLAGS=@CXXFLAGS@
+
+CPPFLAGS=@CPPFLAGS@@X_CFLAGS@
+LDFLAGS=@LDFLAGS@@X_LIBS@
+
+LDLIBS=-lX11 -lXext
+
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+bindir=@bindir@
+
+SRC=life.cc life_io.cc life_rect.cc view.cc output_x.cc gui_x.cc main.cc
+OBJ=$(SRC:.cc=.@OBJEXT@)
+TARGET=life
+
+$(TARGET): $(OBJ)
+
+.PHONY: all clean install uninstall
+
+all: $(TARGET)
+
+install:
+	install -d $(bindir)
+	install -s $(TARGET) $(bindir)
+
+uninstall:
+	rm -f $(bindir)/$(TARGET)
+
+clean:
+	rm -rf $(TARGET) $(OBJ) .dep
+
+.dep:
+	$(CC) -M $(SRC) $(CPPFLAGS) > .dep
+
+-include .dep

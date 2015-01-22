@@ -1,0 +1,38 @@
+# spec file for package plife
+
+Name:         plife
+License:      GPL
+Group:        Amusement/Games
+Autoreqprov:  on
+Version:      @PACKAGE_VERSION@
+Release:      1
+Summary:      Pattern viewer for Conway's Game of Life
+URL:          http://plife.sourceforge.net/
+Source:       %{name}-%{version}.tar.gz
+BuildRoot:    %{_tmppath}/%{name}-%{version}-build
+
+%description
+A lightweight and fast implementation of Conway's Game of Life and related
+cellular automata. This package includes a pattern viewer running X Windows;
+you may also want to install the 'plife-python' package to design complex
+patterns using Python.
+
+%prep
+%setup
+./configure
+
+%build
+make
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make prefix=$RPM_BUILD_ROOT/usr install
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%doc COPYING CHANGES INSTALL README AUTHORS
+/usr/bin/life
+
+%changelog -n plife

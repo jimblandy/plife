@@ -1,0 +1,47 @@
+#C This file reproduces 'BTRACK' from Alan Hensel's collection
+#C (without boxes and labels, though).
+#C The conduits are passed in the following order:
+#C 77, 112, 158, 190, 119, 117, 156, 77, 64, 64 and 112.
+#C What 'BTRACK' says is the following:
+#C 
+#C  All 8 of David Buckingham's Herschel conduits demonstrated.
+#C 
+#C  A Herschel is the 20th generation of the B-heptomino (see BHEPTO).
+#C  Various combinations of still life can be made to assist the
+#C  forward propagation of a Herschel, and with Buckingham's complete
+#C  set, a glider gun of any period greater than 61 can be constructed.
+#C  This period-1246 loop demonstrates all of them. Each conduit in
+#C  this pattern is boxed off and labeled, and future Herschel
+#C  positions are marked by ghost Herschels. See also STILLREFLECTOR, GUN256B.
+#C  
+#C  Gens Type      Tightest Compression; Notes
+#C  ---- ----      ---------------------------
+#C  64   90 degree 153 (also 73, 74, 77); 1 glider, aimed inward.
+#C  77   move+flip  61; 1 glider (natural b-heptomino glider).
+#C  112  90 degree  61; 1 glider, aimed outward.
+#C  117  move       63; 1 glider. Can be perturbed by single-spark oscs.
+#C  119  move+flip 231; 3 gliders.
+#C  156  90 degree  62; 2 gliders: Normal B-hepto glider + one more.
+#C  158  move+flip 176 (also 101, 102, 109, 111, 159); 1 glider.
+#C  190  90 degree 107; 1 glider, aimed inward.
+x = 126, y = 123, rule = B3/S23
+36b2o$36b2o5b2o$43b2o3$12b2o27b2o$12b2o27b2o$47b2o$47b2o$6b2o$6b2o
+$10b2o$10b2o15bo$29bo$27bobo$29bo$5b2o$5b2o3$51bo62b2o$49b3o62bo
+$39bobo6bo63bobo$48b2o20bo37b2o2b2o$18b3o17b3o11b2o16b3o35b2o$53b
+o19bo$17bobo31bo20b2o11b2o11bo$51b2o32b2o9bobo$12b2o84bo$13bo82b
+o$10b3o$10bo2$54b2o15bo$2o33b2o17b2o15bobo$bo25b2o6b2o34b3o40b2o
+$bobo15b2o6bo45bo22b2o16bobo$2b2o15b2o7b3o64bobo18bo$30bo3b2o59b
+o20b2o$35bo58b2o4b2o$32b3o12b2o49bo2bo$32bo14bo50b2o$48b3o56b2o$
+50bo34b2o20b2o$85bo$86b3o$88bo3$10b3o7b2o$20bobo$11bobo8bo$22b2o
+4$48b2o$47bobo$47bo$46b2o59bobo$93b2o$94bo13b3o$94bobo$92b2ob2o$
+91bobo$91bobo$89b3ob2o20b2o$12b2o74bo26bo$12b2o74bob2ob2o18bobo$
+84bob2obobob2o18b2o$19bob2o61b2obobo$19b2obo66bo$3b2o84bobo$4bo85b
+2o$4bobo105b2o$5b2o105bo$113b3o$21bo93bo$19b3o$18bo11bo$3bo14b2o
+8b3o17b2o39b2o$2bobo22bo20bo39bobo$3bo23b2o20bo11bo26bo$48b2o9b3o
+25b2o$58bo$58b2o10b2o$70bo33bobo$68bobo48b2o$68b2o33b3o13bo$29bo
+15b2o70bobo$27bo17b2o41bo28b2ob2o$27bobo48b2o6b3o31bobo$14b2o11b
+o50b2o5bo34bobo$15bo69b2o10b2o20b2ob3o$12b3o83bo26bo$12bo56bo28b
+obo18b2ob3o$67bo16b2o13b2o18b2obo$67bobo9b2o3b2o9b2o$54b2o11bo11b
+2o14bo$55bo37bobo$52b3o38b2o4b2o$52bo45bobo$98bo$96b3o$95bo$95b2o
+5$87bo$87bobo$87bo17b2o$89bo15b2o2$114b2o$114bo$115b3o$117bo$108b
+2o$109bo$108bo$108b2o!

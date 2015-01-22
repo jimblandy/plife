@@ -1,0 +1,17 @@
+Compilation and Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+First, run the "configure" script:
+
+./configure
+
+To build and install the pattern viewer, run:
+(you may need to use "gmake" instead of "make" under *BSD)
+
+make
+make install
+
+To build and install the Python package, use the "setup.py"
+Python script like this:
+
+python setup.py build
+python setup.py install

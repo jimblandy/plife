@@ -1,0 +1,27 @@
+#C Wickstretching in B3/S135 rule.
+#C Growing ship with c/3 head and c/5 tail.
+#C Extensible ship with two types of wicks inside.
+x = 63, y = 113, rule = B3/S135
+50bo9bo$49bobobo3bobobo$52b3ob3o$54bobo$51b2ob3ob2o$51bo2bobo2bo$
+51bobo3bobo$50bo2b5o2bo$49bo2b7o2bo$49bo3bobobo3bo$48b6obob6o$48b
+2o11b2o$50b3obobob3o$49b2obobobobob2o$53bo3bo$52b3ob3o$51b3o3b3o
+$53bo3bo$53b2ob2o$48bobobo5bobobo$49bobo3bo3bobo$49bo2bo5bo2bo$53b
+o3bo$54bobo$53bo3bo$54bobo$53bo3bo$54bobo$53bo3bo$54bobo$53bo3bo
+$54bobo$53bo3bo$54bobo$53bo3bo$54bobo$53bo3bo$54bobo$53bo3bo$54b
+obo$53bo3bo$54bobo$53bo3bo$5bobo46bobo$6bo46bo3bo$4bo3bo45bobo$5b
+obo46bobo$4bo3bo$o11bo39b3ob3o$3bo5bo42bo5bo$2obo5bob2o39b2o3b2o
+$bo9bo40bobobobo$51bo2bobo2bo$2bo7bo42bo3bo$3bo5bo42bobobobo$2bo
+7bo38bo3b2ob2o3bo$3bo5bo40bo3bobo3bo$2bo7bo38b2o3bobo3b2o$3bo5bo
+41bob2ob2obo$2bo7bo39b2o7b2o$3bo5bo$2bo7bo41bo5bo$2bo7bo41bo5bo$
+3bo5bo38bob2obo3bob2obo$2bo7bo37bo13bo$b3o5b3o$2b4ob4o40b2o5b2o$
+2bo7bo42bo3bo$2bo7bo$2b2o2bo2b2o41b3ob3o$3bo5bo40b5ob5o$3b2obob2o
+$b2obobobob2o$2b3o3b3o39bo3bobo3bo$51bobo3bobo$4bobobo41bo3bobo3b
+o$51bobo3bobo$3b2o3b2o40bo3bobo3bo$2bo2b3o2bo40bobo3bobo$3b2obob
+2o40bo3bobo3bo$2bo2bobo2bo40bobo3bobo$3bob3obo40bo3bobo3bo$2bob5o
+bo40bobo3bobo$6bo43bo3bobo3bo$51bobo3bobo$2bob2ob2obo39bo3bobo3b
+o$2bo7bo40bobo3bobo$4bo3bo41bo3bobo3bo$3bobobobo41bobo3bobo$50bo
+3bobo3bo$2bo7bo40bobo3bobo$3bobobobo40bo3bobo3bo$3b2obob2o41bobo
+3bobo$4bo3bo41bo3bobo3bo$6bo44bobo3bobo$6bo43bo3bobo3bo$51bobo3b
+obo$51b3o3b3o$52bo5bo2$51bob2ob2obo$50bo2b2ob2o2bo$53bo3bo$52b3o
+b3o$49b2o3bobo3b2o$53b2ob2o$50bo2bobobo2bo$51bo7bo$53bo3bo2$51b9o
+$51b2o5b2o$53bo3bo!

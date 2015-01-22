@@ -1,0 +1,147 @@
+PLife -- Yet another Conway's Game of Life implementation
+
+	Home page: http://plife.sourceforge.net/
+
+Usage Examples
+~~~~~~~~~~~~~~
+1) to view all "*.l" files in the current directory, run:
+
+life *.l
+
+2) to benchmark 20000 gens of a pattern from file "rabbits.l" and
+   get the resulting number of cells etc., run:
+
+time life -bm 20000 rabbits.l
+
+Controls (in gui mode)
+~~~~~~~~~~~~~~~~~~~~~~
+<escape>			exit
+<control-delete>		clear the universe
+
+<pageup>, <pagedown>		navigate through files specified on command line
+<backspace>			reload pattern
+l				print full list of files given on command line
+
+<enter>, <right button>		go/stop
+<control-right button>		next generation
+<space>				the same
+
+<left button>, arrow keys	drag
+<mouse wheel>, +/-		zoom/unzoom
+<control-mouse wheel>		zoom the place under mouse cursor
+<home>				go to (0, 0)
+
+<shift-left button>		draw
+
+<middle button>			select rectangular blocks
+<control-middle button>		adjust selection corners
+a				select All
+o				select nOne
+h				sHrink selection
+
+f				solid-fill the selection
+c				crop to selection
+<delete>			clear the selection
+<control-insert>		copy selection to clipboard
+
+x				zoom to fit pattern
+z				zoom to fit selection, if any
+
+(Below <N> is a numeric prefix entered with numeric keys)
+
+<N> f				fill the selection randomly with density N/100
+<N> z				set zoom factor to N
+<N> u				set zoom factor to 1/2^N ("unzoom")
+<N> g				go to file number N
+<N> <enter>			skip N generations
+<N> s				skip N generations and set STEP=N
+s				skip STEP generations
+i				print gen counter and #cells to stdout
+n				set game rule to usual S23/B3
+.				clear the numeric prefix and set STEP=4
+				(which is the default)
+
+Pattern descriptions are sent to stdout (along with other information),
+so it's recommended to start the program from an X terminal.
+
+Python Interface
+~~~~~~~~~~~~~~~~
+The Python package included in PLife provides an easy way of constructing
+and manipulating Life patterns.
+Describing patterns in *scripts*, as it is supposed with this package,
+offers something beyond the possibilities of clicking/selecting/dragging/etc.
+(And that's why there are so few editing features in the gui,
+and even no direct save capability!)
+
+For example, this Python script will produce the Gosper gun on standard output:
+
+from life import *
+description ("Period 30 gun by Bill Gosper")
+rule ()
+queenbee = pattern ("""
+**..
+..*.
+...*
+...*
+...*
+..*.
+**..
+""")
+block = pattern ("""
+**
+**
+""")
+gun = queenbee + block (12, 2) + (queenbee[5] + block (12, 2)) (-9, 2, flip_x)
+gun.put ()
+
+The output would be like this, which follows Life 1.06 format:
+
+#D Period 30 gun by Bill Gosper
+#R 23/3
+0 0
+1 0
+2 1
+...
+
+Note:
+ In the above example one could have simply used "print gun" instead of
+ "gun.put ()". It would give a raw Python list, looking like
+ "[0, 0, 1, 0, 2, 1, ...]", which is also accepted by the viewer.
+ There may be as many "put"s in the script as you like, all because
+ Life 1.06 output is plainly streamable.
+
+Rather than streaming a single pattern to stdout, it is also possible
+to save individual patterns (that appear as the script runs) to separate files.
+The files are written in RLE (Run-Length Encoded) format, which has the
+advantage of being much more compact than Life 1.06.
+Pattern elements like the above 'queenbee' or 'block' could also be
+described in RLE. So, the whole above script might read:
+
+from life import *
+queenbee = pattern ("oo$bbo$3bo$3bo$3bo$bbo$oo!")
+block = pattern ("oo$oo!")
+gun = queenbee + block (12, 2) + (queenbee[5] + block (12, 2)) (-9, 2, flip_x)
+gun.save ("gun30.lif", "Period 30 gun by Bill Gosper")
+
+The arguments to "gun.save (...)" are a file name and an (optional)
+pattern description.
+Note:
+ The pattern becomes centered when saved in RLE, so cell coordinates
+ you see in the viewer may differ from those used in the script :(
+
+An important issue is that actions like parsing/transforming/evolving
+and saving patterns (which are potentially heavy) are done by a Python
+extension module written in C++, so that handling large patterns
+should not be a problem.
+
+The Python package comes with a "samples/" directory, which contains a small
+guide to using Python in Life (and by no means is a pattern collection).
+
+If you look for pattern collections, or just want to get closer to Life,
+here are some places to start from:
+
+Achim Flammenkamp's page:	http://wwwhomes.uni-bielefeld.de/achim/gol.html
+Alan Hensel's Life page:	http://hensel.lifepatterns.net/
+Jason Summers' Life page:	http://entropymine.com/jason/life/
+
+Enjoy!

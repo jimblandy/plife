@@ -1,0 +1,30 @@
+PLife Change Log
+
+plife-0.4.1:
+* use of "configure" tools for better portability
+* added support for bigendian architectures (Mac OS X)
+* added "life.load (filename)" method (Python code)
+
+plife-0.4:
+* bugfixes
+* rewritten some Python code in C++ to speed up handling large patterns
+* added "pattern.save (filename [, description])" method
+* cell lists now look like [x1, y1, x2, y2, ...]
+* Python code:
+	- fix the "rule ()" function which didn't affect "pattern.evolve ()" as needed
+	- both Life 1.05 and RLE strings accepted in Python scripts, format autodetection
+	- "text.py" updated
+* new gui features:
+	- adjust selection corners
+	- copy selection to clipboard in RLE
+	- find pattern's bounding rectangle
+	- zoom to fit pattern/selection
+* source reorganisation:
+	- new files: types.hh misc.hh def.hh life_rect.cc
+* evolving many generations at a time made faster due to using the stagger-step
+  algorithm (the idea appears in Alan Hensel's java applet source code)
+* benchmarking option "-test" changed to "-bm"
+* overall brush up
+
+plife-0.3:
+* initial release

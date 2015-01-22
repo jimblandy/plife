@@ -1,0 +1,9 @@
+.PHONY: all install uninstall clean distclean
+
+all install uninstall clean:
+	$(MAKE) -C src $@
+
+distclean: clean
+	rm -f config.log config.status # plife.spec
+	rm -f Makefile src/Makefile src/config.h
+	rm -rf build dist
